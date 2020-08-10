@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<meta charset="utf-8">
+		<script type="text/javascript" >
+			function getWeather(cityName) {
+				$(".weather").empty();
+				$.get("http://localhost:8080/weather/" + cityName).done(function (data) {
+					$( ".weather" ).append(
+					"<span>Poziom zachmurzenia: " + data.clouds + "%</span> <br />" +
+					"<span>Temperatura: " + data.temp + "&deg;C</span> <br />" + 
+					"<span>Ciśnienie: " + data.pressure + "hPa</span> <br />" +
+					"<span>Prędkość wiatru: " + data.wind + "m/s</span> <br />");
+				});
+			};
+		</script>
+
+	</head>
+	<body>
+	<a href="#" onclick="getWeather('Warszawa')">Warszawa</a> <br />
+	<a href="#" onclick="getWeather('Gdansk')">Gdańsk</a> <br />
+	<a href="#" onclick="getWeather('Krakow')">Kraków</a> <br />
+	<a href="#" onclick="getWeather('Wroclaw')">Wrocław</a> <br />
+	<a href="#" onclick="getWeather('Poznan')">Poznań</a> <br />
+	<a href="#" onclick="getWeather('Lodz')">Łódź</a> <br />
+	<a href="#" onclick="getWeather('Katowice')">Katowice</a> <br />
+	
+	<div class="weather" style="margin-top:15px;"></div>
+	</body>
+</html>
