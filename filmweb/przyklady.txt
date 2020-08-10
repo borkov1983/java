@@ -1,0 +1,88 @@
+1. Wyświetlenie listy wszystkich filmów
+	Adres: localhost:8080/restapp/movies 
+	Metoda: GET
+
+2. Wyświetlenie filmu o podanym id
+	Adres: localhost:8080/restapp/movies/{id}
+	Metoda: GET
+	Przykład: localhost:8080/restapp/movies/1
+
+3. Dodanie nowego filmu
+	Adres: localhost:8080/restapp/movies
+	Metoda: POST
+	Przykładowy JSON:
+		{
+			"title": "Zielona Mila",
+			"director": "Frank Darabont",
+			"productionYear": "2000"
+		}
+
+4. Zaktualizowanie informacji o filmie
+	Adres: localhost:8080/restapp/movies
+	Metoda: PUT
+	Przykładowy JSON:
+		{
+			"title": "Zielona Mila",
+			"director": "Frank Darabont",
+			"productionYear": "1999"
+		}
+		
+5. Wyświetlenie komentarzy danego filmu
+	Adres: localhost:8080/restapp/movies/{id}/comments
+	Metoda: GET
+	Przykład: localhost:8080/restapp/movies/1/comments
+
+6. Dodanie komentarza pod konkretny film
+	Adres: localhost:8080/restapp/movies/{id}/comments
+	Metoda: POST
+	Przykładowy JSON:
+		{
+			"author": "Michał Borkowski",
+			"comment": "Świetny film"
+		}
+	
+7. Usunięcie komentarza
+	Adres: localhost:8080/restapp/movies/{movieId}/comments/{commentId}
+	Metoda: DELETE
+	Przykład: localhost:8080/restapp/movies/1/comments/1
+	
+8. Wystawienie oceny
+	Adres: localhost:8080/restapp/movies/1/rating
+	Metoda: POST
+	Przykładowy JSON:
+		{
+			"rating": 5
+		}
+		
+9. Wyświetlenie oceny danego filmu
+	Adres: localhost:8080/restapp/movies/1/rating
+	Metoda: GET
+	
+10. Dodawanie aktorów
+	Adres: localhost:8080/restapp/actors
+	Metoda: POST
+	Przykładowy JSON:
+		{
+			"name": "Michał",
+			"surname": "Borkowski"
+		}
+
+11. Wyświetlenie konkretnego aktora
+	Adres: localhost:8080/restapp/actors/{id}
+	Metoda: GET
+	Przykład: localhost:8080/restapp/actors/1
+	
+12. Przydzielenie filmu danemu aktorowi
+	Adres: localhost:8080/restapp/actors/{actorId}/movies/{movieId}
+	Metoda: PUT
+	Przykład: localhost:8080/restapp/actors/1/movies/1
+	
+13. Wyświetlenie aktorów danego filmu
+	Adres: localhost:8080/restapp/movies/{movieId}/actors
+	Metoda: GET
+	Przykład: localhost:8080/restapp/movies/1/actors
+	
+14. Wyświetlenie filmów danego aktora
+	Adres: localhost:8080/restapp/actors/{actorId}/movies
+	Metoda: GET
+	Przykład: localhost:8080/restapp/actors/1/movies
