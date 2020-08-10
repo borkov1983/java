@@ -1,0 +1,60 @@
+1. Wyświetlenie listy wszystkich produktów
+	Adres: localhost:8080/part-shop/parts
+	Metoda: GET
+
+2. Wyświetlenie produktu o podanym id
+	Adres: localhost:8080/part-shop/parts/{id}
+	Metoda: GET
+	Przykład: localhost:8080/part-shop/parts/1
+
+3. Dodanie nowego produktu
+	Adres: localhost:8080/part-shop/parts
+	Metoda: POST
+	Przykładowy JSON:
+		{
+			"name": "GeForce GTX 1080",
+			"price": 2599
+			"categoryName": "Karty graficzne"
+		}
+
+4. Zaktualizowanie informacji o produkcie
+	Adres: localhost:8080/part-shop/parts/{id}
+	Przykład: localhost:8080/part-shop/parts/1
+	Metoda: PUT
+	Przykładowy JSON:
+		{
+			"name": "GeForce GTX 1080",
+			"price": 2099
+			"categoryName": "Karty graficzne"
+		}
+		
+5. Wyszkukiwanie produktów
+	Adres: localhost:8080/part-shop/parts/search
+	Metoda: POST
+	Przykładowy JSON:
+		{
+			"name": "DDR4",
+			"priceFrom": 100,
+			"priceTo": 200,
+			"categoryName": "RAM"
+		}
+
+6. Dodawanie komentarzy o produkcie
+	Adres: localhost:8080/part-shop/parts/{id}/comments
+	Przykład: localhost:8080/part-shop/parts/1/comments
+	Metoda: POST
+	Przykładowy JSON:
+		{
+			"author": "Michał Borkowski",
+			"value": "Komentarz"
+		}
+
+7. Wyświetlanie komentarzy
+	Adres: localhost:8080/part-shop/parts/{id}/comments
+	Przykład: localhost:8080/part-shop/parts/1/comments
+	Metoda: GET
+	
+8. Usuwanie komentarzy
+	Adres: localhost:8080/part-shop/parts/{id}/comments/{idComment}
+	Przykład: localhost:8080/part-shop/parts/1/comments/1
+	Metoda: DELETE
